@@ -1,5 +1,11 @@
 # Script-Sorting-for-AE
 Script Sorting for AE: The Ultimate Tool for Layer Organization in Adobe After Effects
+
+**Version:** 1.0.1  
+**Author and Maintainer:** Farshad Valaei
+
+This repository contains the **Script Sorting for AE** script for Adobe After Effects.
+
 ## License Activation
 
 This script requires a valid license key to be activated. Without a valid license key, the script's functionality will be locked.
