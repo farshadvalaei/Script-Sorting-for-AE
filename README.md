@@ -3,6 +3,18 @@ Script Sorting for AE: The Ultimate Tool for Layer Organization in Adobe After E
 ## License Activation
 
 This script requires a valid license key to be activated. Without a valid license key, the script's functionality will be locked.
+## Installation Guide
+
+### Prerequisites
+- Adobe After Effects (CS6 or later)
+- Internet connection for license activation
+- Windows or macOS operating system
+
+### Installation Steps
+1. Open Adobe After Effects.
+2. Navigate to `File > Scripts > Run Script File…`.
+3. Select the `Script Sorting for AE The Ultimate Tool for Layer Organization in Adobe After Effects.jsx` file.
+4. Enter your license key in the **Activate** tab and click **Verify License**.
 
 ### How to Activate:
 1. Visit [https://farshadmind.in/](https://farshadmind.in/) to obtain your free license key.
@@ -14,5 +26,7 @@ This script requires a valid license key to be activated. Without a valid licens
 ### Resetting the License:
 If you need to reset the license to enter a new one, use the "Reset License" button in the script interface.
 
+### Downloading Future Updates:
+- All future updates of the **License & Tools** script will be available for download on our official website.
 ### Future Licensing:
 Please note that the license key is currently free, but this may change in the future. Stay updated by visiting [https://farshadmind.in/](https://farshadmind.in/).
