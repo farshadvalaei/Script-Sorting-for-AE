@@ -1,4 +1,14 @@
-﻿function createMainUI(thisObj) {
+// Script Sorting for AE The Ultimate Tool for Layer Organization in Adobe After Effects
+// Version: 1.0.1
+// Author and Maintainer: Farshad Valaei
+// This script is designed for managing licenses and providing useful tools for Adobe After Effects compositions.
+// Developed with the assistance of OpenAI's language models.
+// Learn how to use this script on YouTube: https://www.youtube.com/@farshadvalaei
+// How to Updates this script on Website: https://farshadmind.in
+
+
+
+function createMainUI(thisObj) {
     var mainPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "License & Tools", undefined, {resizeable: true});
 
     mainPanel.orientation = "column";
