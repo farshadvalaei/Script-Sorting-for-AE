@@ -2,7 +2,7 @@
 // Version: 1.0.1
 // Author and Maintainer: Farshad Valaei
 // This script is designed for managing licenses and providing useful tools for Adobe After Effects compositions.
-// Developed with the assistance of OpenAI's language models.
+// Developed with the assistance of AI's language models.
 // Learn how to use this script on YouTube: https://www.youtube.com/@farshadvalaei
 // How to Updates this script on Website: https://farshadmind.in
 
