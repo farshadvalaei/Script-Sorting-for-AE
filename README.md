@@ -32,6 +32,17 @@ This script requires a valid license key to be activated. Without a valid licens
 ### Resetting the License:
 If you need to reset the license to enter a new one, use the "Reset License" button in the script interface.
 
+
+## Watch the Tutorial on YouTube
+
+For a detailed tutorial on how to use this script, please visit our YouTube channel:
+
+[Watch the tutorial](https://www.youtube.com/@farshadvalaei)
+
+Subscribe to the channel to stay updated with the latest tutorials and tips:
+[https://www.youtube.com/@farshadvalaei](https://www.youtube.com/@farshadvalaei)
+
+
 ### Downloading Future Updates:
 - All future updates of the **License & Tools** script will be available for download on our official website.
 ### Future Licensing:
