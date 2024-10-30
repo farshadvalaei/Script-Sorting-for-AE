@@ -7,8 +7,9 @@
 // How to Updates this script on Website: https://farshadvalaei.eu
 
 
+
 function createMainUI(thisObj) {
-    var mainPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "License & Tools", undefined, {resizeable: true});
+    var mainPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", "Sorting tools", undefined, {resizeable: true});
 
     mainPanel.orientation = "column";
     mainPanel.alignChildren = ["fill", "top"];
@@ -19,37 +20,8 @@ function createMainUI(thisObj) {
     tabbedPanel.alignChildren = "fill";
     tabbedPanel.preferredSize = [400, 300];
 
-   
-    var tabActivate = tabbedPanel.add("tab", undefined, "Activate");
-    tabActivate.orientation = "column";
-    tabActivate.alignChildren = ["fill", "top"];
-    tabActivate.margins = 10;
 
-    tabActivate.add("statictext", undefined, "Enter your license key:");
-    var licenseInput = tabActivate.add("edittext", undefined, "");
-    licenseInput.characters = 40;
-    var verifyButton = tabActivate.add("button", undefined, "Verify License");
-
-    verifyButton.onClick = function() {
-        var licenseKey = licenseInput.text;
-        
-      
-        var licenseData = verifyLicense(licenseKey);
-        if (licenseData && licenseData.success) {
-            saveLicenseKey(licenseKey, licenseData.expiry_date);
-            tabTools.enabled = true;
-            tabActivate.enabled = false; 
-            resetButton.enabled = true;  
-            tabbedPanel.selection = tabTools;
-            alert("License activated successfully! The interface is now locked.");
-        } else {
-            alert("Invalid License Key. Please try again.");
-        }
-    };
-
-
-    var tabTools = tabbedPanel.add("tab", undefined, "Tools");
-    tabTools.enabled = false;
+var tabTools = tabbedPanel.add("tab", undefined, "Tools");
     tabTools.orientation = "column";
     tabTools.alignChildren = ["fill", "top"];
     tabTools.margins = 10;
@@ -61,11 +33,11 @@ function createMainUI(thisObj) {
 
     toolsGroup.add("statictext", undefined, "Layer Sequence Tool:");
     toolsGroup.add("statictext", undefined, "Sequence Order:");
-    var orderDropdown = toolsGroup.add("dropdownlist", undefined, ["Top to Bottom", "Bottom to Top"]);
+    var orderDropdown = toolsGroup.add("dropdownlist", undefined, ["Top to Down", "Down to Top"]);
     orderDropdown.selection = 0;
 
-    var sequenceButton = toolsGroup.add("button", undefined, "Sequence Next Layer");
-    var autoSequenceButton = toolsGroup.add("button", undefined, "Auto Sequence All Layers");
+    var sequenceButton = toolsGroup.add("button", undefined, "Manual Layer");
+    var autoSequenceButton = toolsGroup.add("button", undefined, "Auto Layers");
 
     sequenceButton.onClick = function() {
         var order = orderDropdown.selection.index === 0 ? "topToBottom" : "bottomToTop";
@@ -81,7 +53,7 @@ function createMainUI(thisObj) {
     var aboutText = toolsGroup.add("statictext", undefined, "This script helps you sequence layers in your composition.");
     aboutText.alignment = ["fill", "top"];
     toolsGroup.add("statictext", undefined, "Created by: Farshad Valaei");
-        toolsGroup.add("statictext", undefined, "Version: 1.0.1");
+    toolsGroup.add("statictext", undefined, "Version: 1.0.1");
 
     var linkButton = toolsGroup.add("button", undefined, "YouTube");
     linkButton.onClick = function() {
@@ -91,98 +63,16 @@ function createMainUI(thisObj) {
     youtubeButton.onClick = function() {
         openURL("https://farshadvalaei.eu");
     };
-    var linkButton = toolsGroup.add("button", undefined, "Update");
-    linkButton.onClick = function() {
+    var updateButton = toolsGroup.add("button", undefined, "Update");
+    updateButton.onClick = function() {
         openURL("https://farshadvalaei.eu/product/script-sorting-for-ae-the-tool-for-layer-organization-in-adobe-after-effects/");
     };
 
-    var resetButton = mainPanel.add("button", undefined, "Reset License");
-    resetButton.enabled = false; 
-    resetButton.onClick = function() {
-        clearLicenseKey();
-        tabTools.enabled = false;    
-        tabActivate.enabled = true;   
-        resetButton.enabled = false; 
-        tabbedPanel.selection = tabActivate;
-        alert("License reset. Please enter a new license key.");
-    };
-
- 
-    var savedLicenseKeyData = loadLicenseKey();
-    if (savedLicenseKeyData) {
-        var currentDate = new Date();
-        var expiryDate = new Date(savedLicenseKeyData.expiryDate);
-
-        if (expiryDate > currentDate && verifyLicense(savedLicenseKeyData.licenseKey).success) {
-            tabTools.enabled = true;
-            tabActivate.enabled = false;
-            resetButton.enabled = true;
-            tabbedPanel.selection = tabTools;
-        } else {
-            clearLicenseKey();
-            tabbedPanel.selection = tabActivate;
-            alert("Your license has expired or is invalid. Please activate a new license.");
-        }
-    } else {
-        tabbedPanel.selection = tabActivate;
-    }
+    tabbedPanel.selection = tabTools;
 
     mainPanel.layout.layout(true);
     mainPanel.layout.resize();
     return mainPanel;
-}
-
-
-function verifyLicense(licenseKey) {
-    try {
-        var command = 'curl -s -X GET "https://farshadvalaei.eu/wp-json/license/v1/verify/?license_key=' + encodeURIComponent(licenseKey) + '"';
-        var result = system.callSystem(command);
-
-        var jsonResponse = parseJSON(result);
-
-        if (jsonResponse && jsonResponse.success) {
-            return jsonResponse;
-        } else {
-            return null;
-        }
-
-    } catch (e) {
-        alert("An error occurred: " + e.message);
-        return null;
-    }
-}
-
-
-function saveLicenseKey(licenseKey, expiryDate) {
-    var file = new File(Folder.userData.fullName + "/license_key.txt");
-    file.open("w");
-    var data = {
-        licenseKey: licenseKey,
-        expiryDate: expiryDate
-    };
-    file.write(stringifyJSON(data));
-    file.close();
-}
-
-
-function loadLicenseKey() {
-    var file = new File(Folder.userData.fullName + "/license_key.txt");
-    if (file.exists) {
-        file.open("r");
-        var fileContent = file.read();
-        file.close();
-
-        return parseJSON(fileContent);
-    }
-    return null;
-}
-
-
-function clearLicenseKey() {
-    var file = new File(Folder.userData.fullName + "/license_key.txt");
-    if (file.exists) {
-        file.remove();
-    }
 }
 
 
@@ -299,30 +189,6 @@ function openURL(url) {
     }
     command += "\"" + url + "\"";
     system.callSystem(command);
-}
-
-
-function parseJSON(text) {
-    try {
-        var obj = eval('(' + text + ')');
-        return obj;
-    } catch (e) {
-        alert("Failed to parse JSON: " + e.message);
-        return null;
-    }
-}
-
-
-function stringifyJSON(obj) {
-    var str = '{';
-    for (var key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            str += '"' + key + '":"' + obj[key] + '",';
-        }
-    }
-    str = str.slice(0, -1);
-    str += '}';
-    return str;
 }
 
 
