@@ -1,4 +1,4 @@
-// Script Sorting for AE The Ultimate Tool for Layer Organization in Adobe After Effects
+// Script Sorting for AE The Tool for Layer Organization in Adobe After Effects
 // Version: 1.0.1
 // Author and Maintainer: Farshad Valaei
 // This script is designed for managing licenses and providing useful tools for Adobe After Effects compositions.
