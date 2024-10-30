@@ -4,8 +4,7 @@
 // This script is designed for managing licenses and providing useful tools for Adobe After Effects compositions.
 // Developed with the assistance of AI's language models.
 // Learn how to use this script on YouTube: https://www.youtube.com/@farshadvalaei
-// How to Updates this script on Website: https://farshadmind.in
-
+// How to Updates this script on Website: https://farshadvalaei.eu
 
 
 function createMainUI(thisObj) {
@@ -90,11 +89,11 @@ function createMainUI(thisObj) {
     };
     var youtubeButton = toolsGroup.add("button", undefined, "All Scripts");
     youtubeButton.onClick = function() {
-        openURL("https://farshadmind.in");
+        openURL("https://farshadvalaei.eu");
     };
     var linkButton = toolsGroup.add("button", undefined, "Update");
     linkButton.onClick = function() {
-        openURL("https://farshadmind.in/product/script-sorting-for-ae-the-ultimate-tool-for-layer-organization-in-adobe-after-effects/");
+        openURL("https://farshadvalaei.eu/product/script-sorting-for-ae-the-tool-for-layer-organization-in-adobe-after-effects/");
     };
 
     var resetButton = mainPanel.add("button", undefined, "Reset License");
@@ -136,7 +135,7 @@ function createMainUI(thisObj) {
 
 function verifyLicense(licenseKey) {
     try {
-        var command = 'curl -s -X GET "https://farshadmind.in/wp-json/license/v1/verify/?license_key=' + encodeURIComponent(licenseKey) + '"';
+        var command = 'curl -s -X GET "https://farshadvalaei.eu/wp-json/license/v1/verify/?license_key=' + encodeURIComponent(licenseKey) + '"';
         var result = system.callSystem(command);
 
         var jsonResponse = parseJSON(result);
