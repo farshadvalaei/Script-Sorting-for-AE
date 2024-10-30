@@ -24,7 +24,7 @@ This script requires a valid license key to be activated. Without a valid licens
 4. Enter your license key in the **Activate** tab and click **Verify License**.
 
 ### How to Activate:
-1. Visit [https://farshadmind.in/](https://farshadmind.in/) to obtain your free license key.
+1. Visit [https://farshadmind.in/](https://farshadvalaei.eu/) to obtain your free license key.
 2. After running the script in Adobe After Effects, a prompt will appear asking for a license key.
 3. Enter the license key you obtained from the website in the provided input field.
 4. Click on "Verify License".
@@ -47,4 +47,4 @@ Subscribe to the channel to stay updated with the latest tutorials and tips:
 ### Downloading Future Updates:
 - All future updates of the **License & Tools** script will be available for download on our official website.
 ### Future Licensing:
-Please note that the license key is currently free, but this may change in the future. Stay updated by visiting [https://farshadmind.in/](https://farshadmind.in/).
+Please note that the license key is currently free, but this may change in the future. Stay updated by visiting [https://farshadvalaei.eu/](https://farshadvalaei.eu/).
