@@ -1,5 +1,5 @@
 # Script-Sorting-for-AE
-Script Sorting for AE: The Ultimate Tool for Layer Organization in Adobe After Effects
+Script Sorting for AE: The Tool for Layer Organization in Adobe After Effects
 
 **Version:** 1.0.1  
 
@@ -20,7 +20,7 @@ This script requires a valid license key to be activated. Without a valid licens
 ### Installation Steps
 1. Open Adobe After Effects.
 2. Navigate to `File > Scripts > Run Script File…`.
-3. Select the `Script Sorting for AE The Ultimate Tool for Layer Organization in Adobe After Effects.jsx` file.
+3. Select the `Script Sorting for AE The Tool for Layer Organization in Adobe After Effects.jsx` file.
 4. Enter your license key in the **Activate** tab and click **Verify License**.
 
 ### How to Activate:
